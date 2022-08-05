@@ -9,7 +9,7 @@ const Modify = () => {
     const [fileExtension, setFileExtension] = useState('');
     
     useEffect(() => {
-        fetch(`http://localhost:5000/languages/${params?.id}`, {method: 'GET'})
+        fetch(`http://localhost:5000/languages/${params.id}`, {method: 'GET'})
             .then((resp) => resp.json())
             .then((json) => {
                 setName(json?.name);
@@ -20,13 +20,30 @@ const Modify = () => {
             .catch((error) => {
 
             });
-    }, [params?.id]);
+    }, [params.id]);
 
     const handleLanguageSubmission = (event) => {
         event.preventDefault();
 
         // write code to update the specific language
-        fetch(`http://localhost:5000/languages/${params?.id}`, { method: 'PUT' });
+        fetch(`http://localhost:5000/languages/${params.id}`, { 
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name:name,
+                yearCreated:yearCreated,
+                frameworks:[frameworks],
+                fileExtension:fileExtension
+            })
+        })
+        .then(data => 
+            setFileExtension(''),
+            setFrameworks(''),
+            setName(''),
+            setYearCreated('')
+            )
     }
 
     // write to complete the onChange function on each input field
@@ -37,7 +54,7 @@ const Modify = () => {
                     <input 
                         type="text" 
                         value={name} 
-                        onChange={(event) => {}} 
+                        onChange={(e) => {setName(e.target.value)}}
                         className="form-control" placeholder="Name" />
                 </div>
 
@@ -45,7 +62,7 @@ const Modify = () => {
                     <input 
                         type="text" 
                         value={fileExtension} 
-                        onChange={(event) => {}} 
+                        onChange={(e) => {setFileExtension(e.target.value)}}
                         className="form-control" placeholder="Extension" />
                 </div>
 
@@ -53,7 +70,7 @@ const Modify = () => {
                     <input 
                         type="text" 
                         value={yearCreated} 
-                        onChange={(event) => {}} 
+                        onChange={(e) => {setYearCreated(e.target.value)}}
                         className="form-control" placeholder="Year created" />
                 </div>
 
@@ -61,7 +78,7 @@ const Modify = () => {
                     <input 
                         type="text" 
                         value={frameworks} 
-                        onChange={(event) => {}} 
+                        onChange={(e) => {setFrameworks(e.target.value)}} 
                         className="form-control" placeholder="Frameworks" />
                 </div>
 
