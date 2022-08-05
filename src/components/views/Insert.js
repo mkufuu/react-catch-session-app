@@ -6,7 +6,7 @@ const Insert = () => {
     const [yearCreated, setYearCreated] = useState('');
     const [fileExtension, setFileExtension] = useState('');
 
-    // method two below
+    // method two below for creating joint state object
 
     // const [lan, setLan] = useState({
     //     name: '',
