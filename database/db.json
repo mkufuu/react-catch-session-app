@@ -1,0 +1,43 @@
+{
+    "languages": [
+        {
+            "id": 1,
+            "name": "JavaScript",
+            "yearCreated": 1995,
+            "frameworks": [
+                "Next.js",
+                "Koa",
+                "Express",
+                "Angular"
+            ],
+            "fileExtension": ".js"
+        },
+        {
+            "id": 2,
+            "name": "Python",
+            "yearCreated": 1991,
+            "frameworks": [
+                "Django",
+                "Flask",
+                "FastAPI"
+            ],
+            "fileExtension": ".py"
+        },
+        {
+            "id": 3,
+            "name": "Ruby",
+            "yearCreated": 1995,
+            "frameworks": [
+                "Ruby On Rails"
+            ],
+            "fileExtension": ".rb"
+        },
+        {
+            "id": 4,
+            "name": "Bash",
+            "yearCreated": 1989,
+            "frameworks": [],
+            "fileExtension": ".sh"
+        }
+    ]
+}
