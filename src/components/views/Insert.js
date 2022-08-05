@@ -6,16 +6,6 @@ const Insert = () => {
     const [yearCreated, setYearCreated] = useState('');
     const [fileExtension, setFileExtension] = useState('');
 
-<<<<<<< HEAD
-    const handleLanguageSubmission = (event) => {
-        event.preventDefault();
-
-        // write code to create a specific language
-        fetch(`http://localhost:5000/languages`, { method: 'POST' });
-    }
-
-    // write to complete the onChange function on each input field
-=======
     // method two below
 
     // const [lan, setLan] = useState({
@@ -68,26 +58,10 @@ const Insert = () => {
         }
     }
 
->>>>>>> 6efac71 (added post request and handleChange)
     return <div className="mt-2 mb-5">
         <form onSubmit={handleLanguageSubmission}>
             <div className="row g-3">
                 <div className="col-12 col-md-6 col-lg-4">
-<<<<<<< HEAD
-                    <input type="text" value={name} className="form-control" placeholder="Name" />
-                </div>
-
-                <div className="col-12 col-md-6 col-lg-4">
-                    <input type="text" value={fileExtension} className="form-control" placeholder="Extension" />
-                </div>
-
-                <div className="col-12 col-md-6 col-lg-4">
-                    <input type="text" value={yearCreated} className="form-control" placeholder="Year created" />
-                </div>
-
-                <div className="col-12 col-md-6 col-lg-8">
-                    <input type="text" value={frameworks} className="form-control" placeholder="Frameworks" />
-=======
                     <input type="text" name="name" value={name} onChange={handleChange} className="form-control" placeholder="Name" />
                 </div>
 
@@ -101,7 +75,6 @@ const Insert = () => {
 
                 <div className="col-12 col-md-6 col-lg-8">
                     <input type="text" name="frameworks" value={frameworks} onChange={handleChange} className="form-control" placeholder="Frameworks" />
->>>>>>> 6efac71 (added post request and handleChange)
                 </div>
 
                 <div className="col-12 col-md-6 col-lg-4 text-end">
