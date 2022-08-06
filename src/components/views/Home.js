@@ -1,7 +1,7 @@
 import { useLibrary } from "../../hooks";
 
 const Home = (props) => {
-    const languages = useLibrary('_limit=2');
+    const [languages] = useLibrary('_limit=2');
 
     return <main>
         <header className="container">
