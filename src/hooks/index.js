@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 export const useLibrary = (filters) => {
     const [languages, setLanguages] = useState([]);
 
-    useEffect(() => {
+    function fetchData(){
         (async () => {
             try {
                 const resp = await fetch(`http://localhost:5000/languages?${filters}`, { method: 'GET' });
@@ -14,7 +14,11 @@ export const useLibrary = (filters) => {
                 setLanguages([]);
             }
         })();
-    }, []);
+    }
 
-    return languages;
+    useEffect(()=>{
+        fetchData()
+    }, [])
+
+    return [languages, setLanguages, fetchData];
 }

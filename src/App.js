@@ -6,8 +6,10 @@ import Modify from './components/views/Modify';
 import Library from './components/views/Library';
 import Navigation from './components/Navigation';
 import {BrowserRouter, Routes, Route,} from "react-router-dom";
+import { useLibrary } from './hooks';
 
 const App = () => {
+    const [languages, setLanguages, fetchData] = useLibrary()
     return <BrowserRouter>
       <Navigation/>
 
@@ -15,9 +17,9 @@ const App = () => {
             <Route path="/" element={<Home />}/>
             <Route path="about" element={<About />} />
 
-            <Route path="library" element={<Library />}>
-                <Route path="insert" element={<Insert />} />
-                <Route path="modify/:id" element={<Modify />} />
+            <Route path="library" element={<Library languages={languages}/>}>
+                <Route path="insert" element={<Insert fetchData={fetchData}/>} />
+                <Route path="modify/:id" element={<Modify fetchData={fetchData}/>} />
             </Route>
         </Routes>
     </BrowserRouter>;

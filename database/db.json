@@ -1,16 +1,16 @@
 {
   "languages": [
     {
-      "id": 1,
       "name": "JavaScript",
-      "yearCreated": 1995,
       "frameworks": [
         "Next.js",
         "Koa",
         "Express",
         "Angular"
       ],
-      "fileExtension": ".js"
+      "yearCreated": "1995",
+      "fileExtension": ".js",
+      "id": 1
     },
     {
       "id": 2,
@@ -50,6 +50,60 @@
       "yearCreated": "1991",
       "fileExtension": ".java",
       "id": 5
+    },
+    {
+      "name": "Java",
+      "frameworks": [
+        "Apache Struts 1",
+        "Vaadin",
+        "Grails",
+        "Play Framework"
+      ],
+      "yearCreated": "1991",
+      "fileExtension": ".java",
+      "id": 6
+    },
+    {
+      "name": "Michael",
+      "frameworks": [
+        "Maina",
+        "Murage"
+      ],
+      "yearCreated": "1995",
+      "fileExtension": ".apk",
+      "id": 7
+    },
+    {
+      "name": "Michael",
+      "frameworks": [
+        "Apache Struts 1",
+        "Vaadin",
+        "Grails",
+        "Play Framework"
+      ],
+      "yearCreated": "1981",
+      "fileExtension": ".java",
+      "id": 8
+    },
+    {
+      "name": "rice",
+      "frameworks": [
+        "wali",
+        "pilau"
+      ],
+      "yearCreated": "unknown",
+      "fileExtension": ".rice",
+      "id": 9
+    },
+    {
+      "name": "rice",
+      "frameworks": [
+        "wali",
+        "pilau"
+      ],
+      "yearCreated": "unknown",
+      "fileExtension": ".rice",
+      "id": 10
     }
   ]
 }

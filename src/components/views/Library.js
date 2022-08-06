@@ -1,8 +1,8 @@
-import { useLibrary } from "../../hooks";
+// import { useLibrary } from "../../hooks";
 import { Link, Outlet } from "react-router-dom";
 
-const Library = (props) => {
-    const languages = useLibrary();
+const Library = ({languages}) => {
+    // const [languages] = useLibrary();
 
     return <main>
         <div className="container">

@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+// import { useLibrary } from "../../hooks";
 
-const Insert = () => {
+const Insert = ({fetchData}) => {
     const [name, setName] = useState('');
     const [frameworks, setFrameworks] = useState('');
     const [yearCreated, setYearCreated] = useState('');
     const [fileExtension, setFileExtension] = useState('');
+
+    // const form = useRef()
+    // console.log(form.current);
+
+    // const [languages, setLanguages, fetchData] = useLibrary()
 
     // method two below for creating joint state object
 
@@ -17,7 +23,7 @@ const Insert = () => {
 
     const handleLanguageSubmission = (event) => {
         event.preventDefault();
-        
+        document.querySelector('form').reset()
         // write code to create a specific language
         fetch(`http://localhost:5000/languages`, {
             method: 'POST',
@@ -35,8 +41,11 @@ const Insert = () => {
             // })
         })
         .then(resp=>resp.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            fetchData()
+            console.log(data)})
         .catch(err=>console.log(err));
+        
     }
     // handleChange for method two below
 
@@ -59,7 +68,7 @@ const Insert = () => {
     }
 
     return <div className="mt-2 mb-5">
-        <form onSubmit={handleLanguageSubmission}>
+        <form onSubmit={handleLanguageSubmission} >
             <div className="row g-3">
                 <div className="col-12 col-md-6 col-lg-4">
                     <input type="text" name="name" value={name} onChange={handleChange} className="form-control" placeholder="Name" />
